@@ -74,9 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     BlocConsumer<RegisterBloc, RegisterState>(
                       listener: (context, state) {
                         if (state is RegisterSuccess) {
-                          context.goNamed(AppRoutes.home, queryParameters: {
-                            'user_id': "${state.user?.data?.id}"
-                          });
+                          context.goNamed(AppRoutes.home);
                         }
                         if (state is RegisterFailure) {
                           showDialog(

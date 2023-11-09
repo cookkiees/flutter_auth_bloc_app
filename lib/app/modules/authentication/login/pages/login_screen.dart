@@ -62,9 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 BlocConsumer<LoginBloc, LoginState>(
                   listener: (context, state) {
                     if (state is LoginSuccess) {
-                      context.goNamed(AppRoutes.home, queryParameters: {
-                        'user_id': "${state.user?.data?.id}"
-                      }); 
+                      context.goNamed(AppRoutes.home, queryParameters: {});
                     }
                     if (state is LoginFailure) {
                       showDialog(
